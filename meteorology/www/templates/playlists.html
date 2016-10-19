@@ -1,0 +1,47 @@
+<ion-view view-title="Balanço Hídrico">
+  <ion-content ng-controller="teste">
+    <div ng-controller="dao">
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Estado
+        </div>
+        <select ng-options="state.name for state in states" ng-model="selectedState">
+          <option value="">
+            Selecionar
+          </option>
+        </select>
+      </label>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Cidade
+        </div>
+        <select ng-options="city.name for city in selectedState.cities" ng-model="selectedCity">
+          <option value="">
+            Selecionar
+          </option>
+        </select>
+      </label>
+          </div>
+    <div class="item item-divider">
+      Indices de Excesso e deficiência:
+      <div class="item item-text-warp">
+        <canvas id="base" class="chart-bar" chart-data="data" chart-labels="labels" chart-colors="colors" chart-dataset-override="datasetOverride">
+        </canvas>
+      </div>
+      <div class="item item-divider">
+        Evapotranspiração:
+        <div class="item item-text-warp">
+          <canvas id="base" class="chart-bar" chart-data="data" chart-labels="labels" chart-colors="colors" chart-dataset-override="datasetOverride">
+          </canvas>
+        </div>
+      </div>
+      <div class="item item-divider">
+        Precipitação:
+        <div class="item item-text-warp">
+          <canvas id="base" class="chart-bar" chart-data="data" chart-labels="labels" chart-colors="colors" chart-dataset-override="datasetOverride">
+          </canvas>
+        </div>
+      </div>
+
+    </ion-content>
+  </ion-view>
